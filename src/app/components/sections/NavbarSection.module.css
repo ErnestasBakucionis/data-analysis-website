@@ -1,0 +1,20 @@
+.navbar {
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  opacity: 1;
+  position: relative;
+  z-index: 10;
+}
+
+.navbarSticky {
+  position: sticky;
+  top: 0;
+  opacity: 0.9;
+}
+
+.buttonTransition {
+  transition: transform 0.3s ease-in-out;
+}
+
+.buttonPressed {
+  transform: scale(0.9);
+}

@@ -50,5 +50,11 @@
   "username": "Username",
   "confirmPassword": "Confirm Password",
   "signInWithGoogle": "Sign in with Google",
-  "signInWithFacebook": "Sign in with Facebook"
+  "signInWithFacebook": "Sign in with Facebook",
+  "loading": "Loading...",
+  "pageNotFoundTitle": "Page Not Found",
+  "pageNotFoundDescription": "The page you are looking for does not exist.",
+  "error": "Error",
+  "errorTitle": "Something Went Wrong",
+  "errorDescription": "Please try again later or contact support."
 }

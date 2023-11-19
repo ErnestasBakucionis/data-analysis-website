@@ -50,5 +50,11 @@
   "username": "Slapyvardis",
   "confirmPassword": "Patvirtinti slaptažodį",
   "signInWithGoogle": "Prisijungti su Google",
-  "signInWithFacebook": "Prisijungti su Facebook"
+  "signInWithFacebook": "Prisijungti su Facebook",
+  "loading": "Kraunama...",
+  "pageNotFoundTitle": "Puslapis nerastas",
+  "pageNotFoundDescription": "Puslapis, kurio ieškote neegzistuoja.",
+  "error": "Klaida",
+  "errorTitle": "Kažkas nutiko netikėto",
+  "errorDescription": "Pabandykite dar kartą vėliau arba susisiekite techninė pagalba."
 }

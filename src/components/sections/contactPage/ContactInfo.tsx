@@ -26,7 +26,7 @@ const ContactInfo: React.FC = () => {
           href="tel:+37061301589"
           className="text-green-500 hover:text-green-600"
         >
-          +370 832 01589
+          +370 *** ***89
         </a>
       </div>
       <div>

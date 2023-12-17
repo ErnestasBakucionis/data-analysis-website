@@ -46,16 +46,16 @@ export default NextAuth({
     },
     callbacks: {
         jwt({ token, user }) {
-
-            if (user?.role) {
+            if (user) {
+                token.id = user.id;
                 token.role = user.role;
             }
             return token;
         },
         session({ session, token }) {
-            if (token.role && session.user) {
-                //@ts-ignore
-                session.user.role = token.role;
+            if (session.user) {
+                session.user.id = String(token.id);
+                session.user.role = String(token.role);
             }
             return session;
         },

@@ -96,8 +96,16 @@ export async function updateUser(userId: number, updateData: { Vardas: string; P
         where: {
             VartotojoID: userId,
         },
-        data: updateData,
+        data: {
+            ...updateData,
+            El_pastas: validateEmail(updateData.El_pastas) ? updateData.El_pastas : undefined,
+        },
     });
 
     return updatedUser;
+}
+
+function validateEmail(email: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }

@@ -16,13 +16,12 @@ const NavbarSection: React.FC = () => {
   const [isSticky, setIsSticky] = useState(false);
   const pathname: string = usePathname() ?? ''
   const [isButtonPressed, setIsButtonPressed] = useState(false);
-  const { data: session, status } = useSession();
-  const isLoggedIn = status === 'authenticated';
 
   const { data } = useSession();
   const isUserAdmin = data?.user?.role === 'admin';
   const isUserDefault = data?.user?.role === 'user';
   const isUserWorker = data?.user?.role === 'worker';
+  const isLoggedIn = isUserAdmin || isUserDefault || isUserWorker;
 
   const toggleLanguage = () => {
     setIsButtonPressed(true);
@@ -114,7 +113,7 @@ const NavbarSection: React.FC = () => {
           <div className="flex items-center md:ml-6">
             {isLoggedIn ? (
               <>
-                <span className="mr-4">{t("loggedInAs")} {session?.user?.name}</span>
+                <span className="mr-4">{t("loggedInAs")} {data.user?.name}</span>
                 <AnimatedButton
                   onClick={() => handleLogout()}
                   className="px-3 py-2 rounded-md text-sm font-medium text-gray-200 hover:bg-green-600 bg-gray-700"

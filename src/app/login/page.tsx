@@ -5,12 +5,14 @@ import AnimatedButton from "@/components/AnimatedButton";
 import useTranslation from "@/utils/useTranslation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { useRouter } from 'next/navigation'
 
 const LoginPage: React.FC = () => {
   const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +28,7 @@ const LoginPage: React.FC = () => {
     if (result?.error) {
       setError(result.error);
     } else {
-      window.location.href = '/';
+      router.push('/')
     }
   };
 
@@ -38,7 +40,7 @@ const LoginPage: React.FC = () => {
         // Handle errors here
         setError(result.error);
       } else {
-        window.location.href = '/';
+        router.push('/')
       }
     } catch (error) {
       console.error('Error signing in with Google:', error);
@@ -53,7 +55,7 @@ const LoginPage: React.FC = () => {
         // Handle errors here
         setError(result.error);
       } else {
-        window.location.href = '/';
+        router.push('/')
       }
     } catch (error) {
       console.error('Error signing in with Facebook:', error);

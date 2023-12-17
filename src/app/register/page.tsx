@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import AnimatedButton from "@/components/AnimatedButton";
 import useTranslation from "@/utils/useTranslation";
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation'
 
 const RegisterPage: React.FC = () => {
   const { t } = useTranslation();
@@ -12,6 +13,7 @@ const RegisterPage: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const router = useRouter()
 
   const validateForm = () => {
     if (password !== confirmPassword) {
@@ -59,7 +61,7 @@ const RegisterPage: React.FC = () => {
       if (result?.error) {
         setError(t(result.error) || result.error);
       } else {
-        window.location.href = '/';
+        router.push('/')
       }
     } else {
       setError(t(responseData.message) || responseData.message);

@@ -5,6 +5,7 @@ type AnimatedButtonProps = {
   children: React.ReactNode;
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
+  disabled?: boolean;
   type?: "button" | "submit" | "reset";
 };
 

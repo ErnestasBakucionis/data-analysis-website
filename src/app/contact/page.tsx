@@ -1,7 +1,7 @@
 import React from "react";
-import ContactInfo from "../components/sections/contactPage/ContactInfo";
-import VerticalLine from "../components/sections/contactPage/VerticalLine";
-import ContactForm from "../components/sections/contactPage/ContactForm";
+import ContactInfo from "@/components/sections/contactPage/ContactInfo";
+import VerticalLine from "@/components/sections/contactPage/VerticalLine";
+import ContactForm from "@/components/sections/contactPage/ContactForm";
 
 const ContactPage: React.FC = () => {
   return (

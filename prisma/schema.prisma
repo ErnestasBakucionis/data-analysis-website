@@ -1,0 +1,65 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  schemas  = ["DataFlow"]
+}
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["multiSchema"]
+}
+
+model Vartotojas {
+  VartotojoID Int          @id @default(autoincrement())
+  Vardas      String
+  Pavarde     String
+  El_pastas   String       @unique
+  Slaptazodis String
+  Role        String
+  Uzsakymai   Uzsakymas[]
+  Komentarai  Komentaras[]
+
+  @@schema("DataFlow")
+}
+
+model Uzsakymas {
+  UzsakymoID      Int              @id @default(autoincrement())
+  VartotojoID     Int
+  Uzsakymo_data   DateTime         @default(now())
+  Uzsakymo_busena String
+  Vartotojas      Vartotojas       @relation(fields: [VartotojoID], references: [VartotojoID])
+  Komentarai      Komentaras[]
+  Detale          UzsakymoDetale[]
+
+  @@schema("DataFlow")
+}
+
+model Kategorija {
+  KategorijosID Int     @id @default(autoincrement())
+  Pavadinimas   String
+  Aprasymas     String?
+
+  @@schema("DataFlow")
+}
+
+model Komentaras {
+  KomentaroID       Int        @id @default(autoincrement())
+  VartotojoID       Int
+  UzsakymoID        Int
+  Komentaro_tekstas String
+  Komentaro_data    DateTime   @default(now())
+  Vartotojas        Vartotojas @relation(fields: [VartotojoID], references: [VartotojoID])
+  Uzsakymas         Uzsakymas  @relation(fields: [UzsakymoID], references: [UzsakymoID])
+
+  @@schema("DataFlow")
+}
+
+model UzsakymoDetale {
+  EilutesID     Int       @id @default(autoincrement())
+  UzsakymoID    Int
+  Kiekis        Int
+  Vieneto_kaina Float
+  Uzsakymas     Uzsakymas @relation(fields: [UzsakymoID], references: [UzsakymoID])
+
+  @@schema("DataFlow")
+}

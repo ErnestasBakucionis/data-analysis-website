@@ -1,42 +1,69 @@
 "use client";
 import React, { useState } from "react";
-import AnimatedButton from "../components/AnimatedButton";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
+import AnimatedButton from "@/components/AnimatedButton";
 import useTranslation from "@/utils/useTranslation";
+import { signIn } from 'next-auth/react';
 
 const RegisterPage: React.FC = () => {
   const { t } = useTranslation();
-  const [username, setUsername] = useState("");
+  const [error, setError] = useState("");
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateForm = () => {
+    if (password !== confirmPassword) {
+      setError(t("passwordsMustMatch"));
+      return false;
+    }
+
+    if (!email.includes('@')) {
+      setError(t("invalidEmail"));
+      return false;
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Register:", username, email, password, confirmPassword);
-  };
 
-  // Function to handle Google Sign-In
-  const handleGoogleSignIn = (): void => {
-    // signInWithGoogle()
-    //   .then(user => {
-    //     console.log('Signed in with Google:', user);
-    //   })
-    //   .catch(error => {
-    //     console.error('Error signing in with Google:', error);
-    //   });
-  };
+    if (!validateForm()) {
+      return;
+    }
 
-  // Function to handle Facebook Sign-In
-  const handleFacebookSignIn = (): void => {
-    // signInWithFacebook()
-    //   .then(user => {
-    //     console.log('Signed in with Facebook:', user);
-    //   })
-    //   .catch(error => {
-    //     console.error('Error signing in with Facebook:', error);
-    //   });
+    const response = await fetch('/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: name,
+        surname: surname,
+        email: email,
+        password: password,
+        confirmPassword: confirmPassword
+      }),
+    });
+
+    const responseData = await response.json();
+
+    if (response.ok) {
+      const result = await signIn('credentials', {
+        redirect: false,
+        email,
+        password,
+      });
+
+      if (result?.error) {
+        setError(t(result.error) || result.error);
+      } else {
+        window.location.href = '/';
+      }
+    } else {
+      setError(t(responseData.message) || responseData.message);
+    }
   };
 
   return (
@@ -48,17 +75,31 @@ const RegisterPage: React.FC = () => {
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
             <label
-              htmlFor="username"
+              htmlFor="name"
               className="text-sm font-medium text-gray-700"
             >
-              {t("username")}
+              {t("name")}
             </label>
             <input
               type="text"
-              id="username"
-              name="username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              id="name"
+              name="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="mt-1 block w-full px-3 py-2 bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-green-500"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="surname" className="text-sm font-medium text-gray-700">
+              {t("surname")}
+            </label>
+            <input
+              type="text"
+              id="surname"
+              name="surname"
+              value={surname}
+              onChange={(e) => setSurname(e.target.value)}
               className="mt-1 block w-full px-3 py-2 bg-gray-200 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:border-green-500"
               required
             />
@@ -122,24 +163,15 @@ const RegisterPage: React.FC = () => {
               {t("register")}
             </AnimatedButton>
           </div>
-          <div>
-            <AnimatedButton
-              onClick={handleGoogleSignIn}
-              className="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:border-red-700 focus:ring-red-500"
+          {error && (
+            <div
+              className="transition-opacity duration-500 ease-in-out bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative opacity-0 animate-fade-in"
+              role="alert"
             >
-              <FontAwesomeIcon icon={faGoogle} className="mr-2" />
-              {t("signInWithGoogle")}
-            </AnimatedButton>
-          </div>
-          <div>
-            <AnimatedButton
-              onClick={handleFacebookSignIn}
-              className="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring-blue-500"
-            >
-              <FontAwesomeIcon icon={faFacebook} className="mr-2" />
-              {t("signInWithFacebook")}
-            </AnimatedButton>
-          </div>
+              <strong className="font-bold">{t('error')}! </strong>
+              <span className="block sm:inline">{error}</span>
+            </div>
+          )}
         </form>
       </div>
     </div>

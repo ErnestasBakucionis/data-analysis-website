@@ -21,7 +21,7 @@ function FeaturesSection() {
             >
               <Image
                 src={
-                  require(`../../../../images/Advanced_Analytics_Concept.png`)
+                  require(`../../../images/Advanced_Analytics_Concept.png`)
                     .default
                 }
                 width={500}
@@ -48,7 +48,7 @@ function FeaturesSection() {
             >
               <Image
                 src={
-                  require(`../../../../images/Seamless_Integration_Concept.png`)
+                  require(`../../../images/Seamless_Integration_Concept.png`)
                     .default
                 }
                 width={500}
@@ -75,7 +75,7 @@ function FeaturesSection() {
             >
               <Image
                 src={
-                  require(`../../../../images/Customizable_Workflows_Concept.png`)
+                  require(`../../../images/Customizable_Workflows_Concept.png`)
                     .default
                 }
                 width={500}

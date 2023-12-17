@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AnimatedButton from "../../AnimatedButton";
+import AnimatedButton from "@/components/AnimatedButton";
 import useTranslation from "@/utils/useTranslation";
 
 const ContactForm: React.FC = () => {

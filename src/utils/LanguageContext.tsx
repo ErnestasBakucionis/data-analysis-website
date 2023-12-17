@@ -7,7 +7,7 @@ type LanguageContextType = {
 };
 
 const defaultLanguageContext: LanguageContextType = {
-  locale: "en",
+  locale: "lt",
   setLocale: () => {},
 };
 
@@ -23,7 +23,7 @@ export const useLanguage = () => {
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [locale, setLocale] = useState("en");
+  const [locale, setLocale] = useState("lt");
 
   return (
     <LanguageContext.Provider value={{ locale, setLocale }}>

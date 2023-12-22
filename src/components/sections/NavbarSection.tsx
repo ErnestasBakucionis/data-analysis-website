@@ -96,14 +96,21 @@ const NavbarSection: React.FC = () => {
               </span>
             </Link>
             {isUserAdmin && (
-              <Link href="/administration" passHref>
-                <span className={`my-1 text-sm md:mx-4 md:my-0 ${isActive("/administration") ? "text-green-500" : "text-gray-200"} hover:text-green-500 cursor-pointer`}>
-                  {t("administration")}
-                </span>
-              </Link>
+              <>
+                <Link href="/administration/users" passHref>
+                  <span className={`my-1 text-sm md:mx-4 md:my-0 ${isActive("/administration") ? "text-green-500" : "text-gray-200"} hover:text-green-500 cursor-pointer`}>
+                    {t("administration")}
+                  </span>
+                </Link>
+                <Link href="/orders/myorders" passHref>
+                  <span className={`my-1 text-sm md:mx-4 md:my-0 ${isActive("/orders") ? "text-green-500" : "text-gray-200"} hover:text-green-500 cursor-pointer`}>
+                    {t("orders")}
+                  </span>
+                </Link>
+              </>
             )}
             {(isUserWorker || isUserDefault) && (
-              <Link href="/orders" passHref>
+              <Link href="/orders/myorders" passHref>
                 <span className={`my-1 text-sm md:mx-4 md:my-0 ${isActive("/orders") ? "text-green-500" : "text-gray-200"} hover:text-green-500 cursor-pointer`}>
                   {t("orders")}
                 </span>

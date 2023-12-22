@@ -14,9 +14,9 @@ function BannerSection() {
 
   let linkPath = "/register";
   if (isUserAdmin) {
-    linkPath = "/administration";
+    linkPath = "/administration/users";
   } else if (isUserDefault || isUserWorker) {
-    linkPath = "/orders";
+    linkPath = "/orders/myorders";
   }
 
   return (

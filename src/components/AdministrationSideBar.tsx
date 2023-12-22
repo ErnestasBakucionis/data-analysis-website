@@ -29,13 +29,18 @@ const Sidebar: React.FC = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/administration/orders">
+                    <div
+                        className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-not-allowed transition duration-200 ${isActive("/administration/orders") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
+                    >
+                        {t("orders")} (Under development)
+                    </div>
+                    {/* <Link href="/administration/orders">
                         <div
                             className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-pointer transition duration-200 hover:bg-green-500 ${isActive("/administration/orders") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
                         >
                             {t("orders")}
                         </div>
-                    </Link>
+                    </Link> */}
                 </li>
             </ul>
         </div>

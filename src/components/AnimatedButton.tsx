@@ -16,9 +16,11 @@ const buttonVariants = {
 
 const AnimatedButton: React.FC<AnimatedButtonProps> = ({
   children,
+  className = "px-3 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500",
   ...props
 }) => (
   <motion.button
+    className={className}
     variants={buttonVariants}
     whileHover="hover"
     whileTap="tap"

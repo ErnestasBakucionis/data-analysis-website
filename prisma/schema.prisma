@@ -24,13 +24,18 @@ model Vartotojas {
 }
 
 model Uzsakymas {
-  UzsakymoID      Int              @id @default(autoincrement())
-  VartotojoID     Int
-  Uzsakymo_data   DateTime         @default(now())
-  Uzsakymo_busena String
-  Vartotojas      Vartotojas       @relation(fields: [VartotojoID], references: [VartotojoID])
-  Komentarai      Komentaras[]
-  Detale          UzsakymoDetale[]
+  UzsakymoID          Int              @id @default(autoincrement())
+  VartotojoID         Int
+  Uzsakymo_data       DateTime         @default(now())
+  Uzsakymo_busena     String
+  Proceso_tipas       String
+  Duomenu_tipas       String?
+  Analizes_irankis    String?
+  CSV_Duomenu_kelias  String?
+  Analizes_rezultatai Json?
+  Vartotojas          Vartotojas       @relation(fields: [VartotojoID], references: [VartotojoID])
+  Komentarai          Komentaras[]
+  Detale              UzsakymoDetale[]
 
   @@schema("DataFlow")
 }

@@ -1,10 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import { File } from 'formidable';
+import cuid from 'cuid';
+import { SimpleData } from '@/interfaces/simpleData';
+import Papa from 'papaparse';
 
 function generateFileName(userId: number, orderDate: Date, processType: string, dataType: string, analysisType: string): string {
     const formattedDate = orderDate.toISOString().split('T')[0].replace(/-/g, '');
-    return `${userId}_${formattedDate}_${processType}_${dataType}_${analysisType}.csv`;
+    const uniqueCuid = cuid();
+    return `${userId}_${formattedDate}_${processType}_${dataType}_${analysisType}_${uniqueCuid}.csv`;
 }
 
 export const saveFileLocally = (
@@ -38,3 +42,15 @@ export const saveFileLocally = (
         readStream.on('error', reject);
     });
 };
+
+
+export const readCSVFromFile = (filePath: string): Promise<SimpleData[]> => {
+    return new Promise((resolve, reject) => {
+        Papa.parse(fs.createReadStream(filePath), {
+            header: true,
+            dynamicTyping: true,
+            complete: (results) => resolve(results.data as SimpleData[]),
+            error: (error) => reject(error)
+        });
+    });
+}

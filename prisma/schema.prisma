@@ -33,6 +33,7 @@ model Uzsakymas {
   Analizes_irankis    String?
   CSV_Duomenu_kelias  String?
   Analizes_rezultatai Json?
+  JSON_duomenys       Json?
   Vartotojas          Vartotojas       @relation(fields: [VartotojoID], references: [VartotojoID])
   Komentarai          Komentaras[]
   Detale              UzsakymoDetale[]

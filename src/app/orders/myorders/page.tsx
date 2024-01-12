@@ -4,27 +4,29 @@ import Papa from 'papaparse';
 import Link from 'next/link';
 import AnimatedButton from '@/components/AnimatedButton';
 import { useSession } from 'next-auth/react';
+import OrdersTable from '@/components/OrdersTable';
+import useTranslation from '@/utils/useTranslation';
 
 type AnalysisTool = 'regression' | 'segmentation' | 'timeseries' | 'cohort';
-type DataType = 'client' | 'order' | 'product' | 'category' | 'orderLineItem';
+type DataType = 'simple' | 'advanced';
 
 interface CSVHeaders {
     [key: string]: string[];
 }
 
 const csvHeaders: CSVHeaders = {
-    client: ['ID', 'Name', 'Surname', 'Email', 'Address', 'Phone Number'],
-    order: ['ID', 'Order Date', 'Total Amount', 'Client ID', 'Delivery Status'],
-    product: ['ID', 'Name', 'Description', 'Price', 'Category ID'],
-    category: ['ID', 'Name', 'Description'],
-    orderLineItem: ['ID', 'Order ID', 'Product ID', 'Quantity', 'Unit Price'],
+    //ID,Country,City,Order Date,Product Name,Unit Price,Quantity,Total Price,Category Name,Weekday,Public Holiday,Season,Month,Year,Price Change Indicator,7-day Moving Average,Category Seasonality Index,Competitor Pricing,Marketing Spend,Customer Average Rating,Inventory Level,Online Search Trend
+    simple: ['ID', 'Country', 'City', 'Order Date', 'Product Name', 'Unit Price', 'Quantity', 'Total Price', 'Category Name', 'Weekday', 'Public Holiday', 'Season', 'Month', 'Year', 'Price Change Indicator', '7-day Moving Average', 'Category Seasonality Index', 'Competitor Pricing', 'Marketing Spend', 'Customer Average Rating', 'Inventory Level', 'Online Search Trend'],
+    //simple: ['ID', 'Name', 'Surname', 'Email', 'Address', 'Phone Number', 'Country', 'City', 'Order Date', 'Product Name', 'Product Description', 'Unit Price', 'Quantity', 'Total Price', 'Category Name', 'Category Description'],
+    advanced: [],
 };
 
 function MyOrders() {
+    const { t } = useTranslation();
     const [file, setFile] = useState<File | null>(null);
     const [learnMoreLink, setLearnMoreLink] = useState('/orders/regression');
     const [selectedAnalysisTool, setSelectedAnalysisTool] = useState<AnalysisTool>('regression');
-    const [selectedDataType, setSelectedDataType] = useState<DataType>('client');
+    const [selectedDataTemplate, setSelectedDataTemplate] = useState<DataType>('simple');
     const [validationError, setValidationError] = useState<string>('');
     const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
     const [isAutomated, setIsAutomated] = useState<boolean>(true);
@@ -57,7 +59,7 @@ function MyOrders() {
             Papa.parse(file, {
                 complete: (results) => {
                     if (results.data && results.data.length > 0) {
-                        if (validateCSVContents(results.data, csvHeaders[selectedDataType])) {
+                        if (validateCSVContents(results.data, csvHeaders[selectedDataTemplate])) {
                             resolve(true); // Validation passed
                         } else {
                             setValidationError('The CSV file does not have the expected headers.');
@@ -90,7 +92,7 @@ function MyOrders() {
     };
 
     const handleDataTypeChange = (event: ChangeEvent<HTMLSelectElement>) => {
-        setSelectedDataType(event.target.value as DataType);
+        setSelectedDataTemplate(event.target.value as DataType);
     };
 
     const validateForm = (): boolean => {
@@ -102,8 +104,8 @@ function MyOrders() {
             setValidationError('Please select an analysis tool.');
             return false;
         }
-        if (!selectedDataType) {
-            setValidationError('Please select a data type.');
+        if (!selectedDataTemplate) {
+            setValidationError('Please select a data template.');
             return false;
         }
         return true;
@@ -127,7 +129,7 @@ function MyOrders() {
         const formData = new FormData();
         formData.append('csvFile', file);
         formData.append('processType', isAutomated ? 'automated' : 'manual');
-        formData.append('dataType', selectedDataType);
+        formData.append('dataTemplate', selectedDataTemplate);
         formData.append('analysisTool', selectedAnalysisTool);
         formData.append('userId', data?.user?.id ?? '');
 
@@ -151,11 +153,11 @@ function MyOrders() {
 
     return (
         <div className="container mx-auto p-6">
-            <h1 className="text-3xl font-semibold mb-4">Create New Order</h1>
+            <h1 className="text-3xl font-semibold mb-4">{t('createNewOrder')}</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">
                     <label htmlFor="csvUpload" className="block text-gray-700 text-sm font-bold mb-2">
-                        Upload CSV File
+                        {t('uploadCsvFile')}
                     </label>
                     <input
                         type="file"
@@ -169,7 +171,7 @@ function MyOrders() {
 
                 <div className="mb-4">
                     <label htmlFor="automationStatus" className="block text-gray-700 text-sm font-bold mb-2">
-                        Order Automation
+                        {t('processType')}
                     </label>
                     <select
                         id="automationStatus"
@@ -178,35 +180,32 @@ function MyOrders() {
                         required
                         className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     >
-                        <option value="automated">Automated</option>
-                        <option value="manual" disabled>Manual (Under development)</option>
+                        <option value="automated">{t('automated')}</option>
+                        <option value="manual" disabled>{t('manual')} ({t('underDevelopment')})</option>
                     </select>
                 </div>
 
                 {isAutomated && (
                     <div className="mb-4">
                         <label htmlFor="dataType" className="block text-gray-700 text-sm font-bold mb-2">
-                            Select Data Type (<Link href="/orders/automatedAnalysis" className="text-blue-600 hover:underline">Learn More</Link>)
+                            {t('dataTemplate')} (<Link href="/orders/automatedAnalysis" className="text-blue-600 hover:underline">{t('learnMore')}</Link>)
                         </label>
                         <select
                             id="dataType"
-                            value={selectedDataType}
+                            value={selectedDataTemplate}
                             onChange={handleDataTypeChange}
                             required
                             className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         >
-                            <option value="client">Client</option>
-                            <option value="order" disabled>Order (Under development)</option>
-                            <option value="product" disabled>Product (Under development)</option>
-                            <option value="category" disabled>Category (Under development)</option>
-                            <option value="orderLineItem" disabled>Order Line Item (Under development)</option>
+                            <option value="simple">{t('simple')}</option>
+                            <option value="advanced" disabled>{t('advanced')} ({t('underDevelopment')})</option>
                         </select>
                     </div>
                 )}
 
                 <div className="mb-4">
                     <label htmlFor="analysisTool" className="block text-gray-700 text-sm font-bold mb-2">
-                        Select Analysis Tool (<Link href={learnMoreLink} className="text-blue-600 hover:underline">Learn More</Link>)
+                        {t('analysisTool')} (<Link href={learnMoreLink} className="text-blue-600 hover:underline">{t('learnMore')}</Link>)
                     </label>
                     <select
                         id="analysisTool"
@@ -215,30 +214,33 @@ function MyOrders() {
                         required
                         className="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                     >
-                        <option value="regression">Regression Analysis</option>
-                        <option value="segmentation" disabled>Segmentation Analysis (Under development)</option>
-                        <option value="timeseries" disabled>Time Series Analysis (Under development)</option>
-                        <option value="cohort" disabled>Cohort Analysis (Under development)</option>
+                        <option value="regression">{t('regression')}</option>
+                        <option value="segmentation" disabled>{t('segmentation')} ({t('underDevelopment')})</option>
+                        <option value="timeseries" disabled>{t('timeSeries')} ({t('underDevelopment')})</option>
+                        <option value="cohort" disabled>{t('cohort')} ({t('underDevelopment')})</option>
                     </select>
                 </div>
 
-                <AnimatedButton type="submit">
-                    Submit Order
+                <AnimatedButton type="submit" className='px-3 mb-3 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500'>
+                    {t('submitOrder')}
                 </AnimatedButton>
             </form>
             {isSubmitted && (
-                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
-                    <strong className="font-bold">Success!</strong>
-                    <span className="block sm:inline"> Your order has been successfully submitted.</span>
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative m-4" role="alert">
+                    <strong className="font-bold">{t('success')}</strong>
+                    <span className="block sm:inline"> {t('orderSucceded')} </span>
                 </div>
             )}
 
             {validationError && (
-                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4" role="alert">
-                    <strong className="font-bold">Error!</strong>
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative m-4" role="alert">
+                    <strong className="font-bold">{t('error')}</strong>
                     <span className="block sm:inline"> {validationError}</span>
                 </div>
             )}
+            <hr className="my-4" />
+            <h1 className="text-3xl font-semibold mb-4">{t('myOrders')}</h1>
+            <OrdersTable />
         </div>
     );
 }

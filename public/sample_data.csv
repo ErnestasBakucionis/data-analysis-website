@@ -1,0 +1,101 @@
+ID,Country,City,Order Date,Product Name,Unit Price,Quantity,Total Price,Category Name,Weekday,Public Holiday,Season,Month,Year,Price Change Indicator,7-day Moving Average,Category Seasonality Index,Competitor Pricing,Marketing Spend,Customer Average Rating,Inventory Level,Online Search Trend
+1,Australia,Sydney,2024-01-04,Laptop,362.25,8,2898.0,Electronics,Thursday,0,Winter,1,2024,0,2898.0,1.16,1034.61,13254,4.2,176,0.5
+2,India,Bangalore,2024-01-05,Eggs,791.87,5,3959.35,Grocery,Friday,1,Winter,1,2024,0,3428.68,1.0,1067.17,17903,1.3,107,0.8
+3,Japan,Osaka,2024-01-06,Tablet,290.37,1,290.37,Electronics,Saturday,0,Winter,1,2024,1,2382.57,1.41,1079.94,25739,3.5,91,1.1
+4,Australia,Brisbane,2024-01-07,Tablet,405.47,7,2838.29,Electronics,Sunday,0,Winter,1,2024,0,2496.5,1.33,1095.0,29519,1.6,125,1.5
+5,Brazil,Sao Paulo,2024-01-08,Action Figure,994.95,6,5969.7,Toys,Monday,1,Winter,1,2024,0,3191.14,1.13,1099.24,29362,1.4,151,0.8
+6,Russia,Novosibirsk,2024-01-09,Tablet,38.22,9,343.98,Electronics,Tuesday,1,Winter,1,2024,1,2716.62,0.88,1018.81,13721,3.0,166,1.5
+7,Australia,Melbourne,2024-01-10,Action Figure,261.53,6,1569.18,Toys,Wednesday,0,Winter,1,2024,1,2552.7,1.06,981.81,16040,3.4,158,0.5
+8,Germany,Berlin,2024-01-11,Milk,732.92,6,4397.52,Grocery,Thursday,0,Winter,1,2024,0,2766.91,1.03,1038.34,13373,4.7,200,1.4
+9,South Africa,Johannesburg,2024-01-12,Action Figure,358.16,1,358.16,Toys,Friday,0,Winter,1,2024,1,2252.46,1.22,1079.43,14900,3.7,183,1.0
+10,France,Lyon,2024-01-13,Board Game,85.03,4,340.12,Toys,Saturday,1,Winter,1,2024,1,2259.56,0.9,931.28,29231,1.4,83,0.9
+11,Germany,Frankfurt,2024-01-14,Tablet,260.42,4,1041.68,Electronics,Sunday,1,Winter,1,2024,0,2002.91,1.36,1073.07,25282,2.1,123,0.7
+12,Japan,Tokyo,2024-01-15,Shoes,778.59,1,778.59,Clothing,Monday,1,Winter,1,2024,1,1261.32,1.42,933.64,17017,3.2,185,0.7
+13,Brazil,Brasilia,2024-01-16,Tablet,821.31,7,5749.17,Electronics,Tuesday,0,Winter,1,2024,0,2033.49,1.37,1089.86,29109,4.8,108,1.1
+14,Russia,Moscow,2024-01-17,Pants,144.92,4,579.68,Clothing,Wednesday,1,Winter,1,2024,1,1892.13,1.27,1060.99,21976,4.1,155,1.3
+15,Canada,Toronto,2024-01-18,Camera,675.15,1,675.15,Electronics,Thursday,1,Winter,1,2024,1,1360.36,0.99,967.01,22618,1.6,194,1.2
+16,Brazil,Brasilia,2024-01-19,Milk,627.28,9,5645.52,Grocery,Friday,1,Winter,1,2024,1,2115.7,1.47,926.87,12178,1.4,172,1.0
+17,Germany,Munich,2024-01-20,Jacket,431.36,8,3450.88,Clothing,Saturday,1,Winter,1,2024,0,2560.1,1.3,1050.44,13858,4.8,161,0.9
+18,Australia,Sydney,2024-01-21,Puzzle,357.24,7,2500.68,Toys,Sunday,1,Winter,1,2024,0,2768.52,1.29,911.07,29205,2.2,96,1.4
+19,Germany,Munich,2024-01-22,Shoes,33.74,1,33.74,Clothing,Monday,0,Winter,1,2024,1,2662.12,1.19,1050.44,16074,1.2,60,0.8
+20,USA,New York,2024-01-23,Action Figure,53.77,1,53.77,Toys,Tuesday,1,Winter,1,2024,0,1848.49,0.84,1059.72,24267,4.7,56,0.8
+21,USA,Los Angeles,2024-01-24,Jacket,248.75,2,497.5,Clothing,Wednesday,1,Winter,1,2024,0,1836.75,0.94,1020.16,14861,2.1,125,0.8
+22,Australia,Sydney,2024-01-25,Bread,24.21,6,145.26,Grocery,Thursday,1,Winter,1,2024,0,1761.05,1.49,984.53,27749,3.3,71,0.7
+23,Germany,Berlin,2024-01-26,Cheese,681.42,1,681.42,Grocery,Friday,0,Winter,1,2024,0,1051.89,0.97,974.79,12856,4.0,113,0.8
+24,Germany,Munich,2024-01-27,Shoes,47.29,6,283.74,Clothing,Saturday,0,Winter,1,2024,1,599.44,1.4,1075.53,21207,3.3,131,1.1
+25,Canada,Montreal,2024-01-28,Jacket,50.39,4,201.56,Clothing,Sunday,0,Winter,1,2024,1,271.0,1.0,916.09,21470,4.6,167,1.0
+26,Canada,Vancouver,2024-01-29,Shoes,747.69,1,747.69,Clothing,Monday,1,Winter,1,2024,1,372.99,0.87,971.51,20759,3.0,188,1.3
+27,Japan,Kyoto,2024-01-30,Doll,691.36,6,4148.16,Toys,Tuesday,0,Winter,1,2024,0,957.9,1.41,965.17,20048,1.3,129,0.6
+28,Russia,Novosibirsk,2024-01-31,Laptop,147.94,5,739.7,Electronics,Wednesday,1,Winter,1,2024,0,992.5,1.14,1018.96,12141,4.8,163,0.9
+29,Russia,Moscow,2024-02-01,Laptop,243.69,1,243.69,Electronics,Thursday,0,Winter,2,2024,1,1006.57,1.1,987.2,24542,3.1,158,1.2
+30,Canada,Montreal,2024-02-02,Bread,822.23,5,4111.15,Grocery,Friday,1,Winter,2,2024,1,1496.53,1.37,1081.26,15653,3.6,78,0.8
+31,USA,Los Angeles,2024-02-03,Doll,115.75,6,694.5,Toys,Saturday,1,Winter,2,2024,1,1555.21,1.28,1033.72,12131,3.2,75,1.3
+32,Germany,Munich,2024-02-04,Board Game,621.79,9,5596.11,Toys,Sunday,0,Winter,2,2024,1,2325.86,1.18,1057.51,19064,2.3,57,0.9
+33,France,Marseille,2024-02-05,Bread,994.5,1,994.5,Grocery,Monday,1,Winter,2,2024,0,2361.12,1.34,1078.17,26085,1.2,73,1.4
+34,Brazil,Rio de Janeiro,2024-02-06,Board Game,641.16,1,641.16,Toys,Tuesday,1,Winter,2,2024,0,1860.12,0.85,954.2,27683,1.4,83,1.3
+35,Canada,Vancouver,2024-02-07,Cheese,935.87,4,3743.48,Grocery,Wednesday,0,Winter,2,2024,0,2289.23,1.06,918.42,22736,1.7,109,1.1
+36,South Africa,Johannesburg,2024-02-08,Laptop,321.12,9,2890.08,Electronics,Thursday,1,Winter,2,2024,0,2667.28,0.98,1074.84,29599,2.6,87,0.6
+37,Japan,Tokyo,2024-02-09,Puzzle,431.11,9,3879.99,Toys,Friday,1,Winter,2,2024,0,2634.26,1.01,965.54,13649,2.3,135,0.9
+38,Brazil,Sao Paulo,2024-02-10,Tablet,632.39,9,5691.51,Electronics,Saturday,1,Winter,2,2024,1,3348.12,0.82,939.92,13068,4.0,167,1.5
+39,France,Paris,2024-02-11,Pants,595.8,4,2383.2,Clothing,Sunday,1,Winter,2,2024,0,2889.13,0.94,935.02,21242,1.6,63,0.9
+40,Canada,Toronto,2024-02-12,Milk,508.13,2,1016.26,Grocery,Monday,0,Winter,2,2024,0,2892.24,0.95,1004.81,14568,3.5,179,0.9
+41,Canada,Montreal,2024-02-13,Milk,264.27,2,528.54,Grocery,Tuesday,1,Winter,2,2024,1,2876.15,1.27,1001.57,22086,3.1,94,1.0
+42,USA,Chicago,2024-02-14,Jacket,678.73,5,3393.65,Clothing,Wednesday,1,Winter,2,2024,1,2826.18,0.89,1012.1,19032,4.9,129,0.7
+43,USA,New York,2024-02-15,Jacket,223.76,6,1342.56,Clothing,Thursday,0,Winter,2,2024,0,2605.1,0.86,948.73,26119,3.9,157,1.0
+44,South Africa,Durban,2024-02-16,Bread,945.21,9,8506.89,Grocery,Friday,0,Winter,2,2024,0,3266.09,0.93,925.54,25705,3.9,106,1.0
+45,France,Marseille,2024-02-17,Bread,550.24,1,550.24,Grocery,Saturday,0,Winter,2,2024,1,2531.62,0.96,957.06,26820,1.5,144,0.8
+46,Japan,Kyoto,2024-02-18,Milk,837.55,4,3350.2,Grocery,Sunday,0,Winter,2,2024,0,2669.76,1.47,1042.49,15239,2.3,121,1.2
+47,Australia,Brisbane,2024-02-19,Puzzle,518.14,4,2072.56,Toys,Monday,0,Winter,2,2024,1,2820.66,1.26,924.49,21918,3.1,118,0.6
+48,India,Mumbai,2024-02-20,Doll,197.83,6,1186.98,Toys,Tuesday,0,Winter,2,2024,0,2914.73,0.97,1052.4,13492,3.7,133,0.7
+49,South Africa,Durban,2024-02-21,Smartphone,202.41,10,2024.1,Electronics,Wednesday,1,Winter,2,2024,1,2719.08,0.96,1049.3,12224,3.8,116,0.9
+50,Australia,Sydney,2024-02-22,Board Game,65.0,4,260.0,Toys,Thursday,1,Winter,2,2024,1,2564.42,1.14,973.06,14056,2.4,80,0.9
+51,Japan,Osaka,2024-02-23,Milk,686.18,8,5489.44,Grocery,Friday,0,Winter,2,2024,0,2133.36,1.41,1038.38,20317,2.6,108,1.3
+52,India,Mumbai,2024-02-24,Cheese,777.16,10,7771.6,Grocery,Saturday,0,Winter,2,2024,0,3164.98,1.32,1043.61,16799,2.6,159,0.9
+53,India,Mumbai,2024-02-25,Smartphone,642.71,10,6427.1,Electronics,Sunday,0,Winter,2,2024,0,3604.54,1.48,935.91,15142,2.6,148,1.3
+54,Australia,Brisbane,2024-02-26,Tablet,791.14,3,2373.42,Electronics,Monday,1,Winter,2,2024,0,3647.52,1.34,940.95,29582,4.4,158,0.7
+55,South Africa,Cape Town,2024-02-27,Camera,25.64,2,51.28,Electronics,Tuesday,1,Winter,2,2024,1,3485.28,1.3,1036.12,19127,1.6,198,0.9
+56,Brazil,Sao Paulo,2024-02-28,Tablet,407.45,4,1629.8,Electronics,Wednesday,1,Winter,2,2024,1,3428.95,1.44,1082.15,24194,2.3,109,1.0
+57,Brazil,Sao Paulo,2024-02-29,Shirt,319.44,10,3194.4,Clothing,Thursday,1,Winter,2,2024,1,3848.15,1.1,910.73,18080,3.4,136,1.1
+58,Canada,Montreal,2024-03-01,Cheese,115.74,8,925.92,Grocery,Friday,0,Winter,3,2024,1,3196.22,1.14,1052.73,14917,4.5,55,1.2
+59,USA,Los Angeles,2024-03-02,Action Figure,332.18,10,3321.8,Toys,Saturday,1,Winter,3,2024,1,2560.53,0.99,1072.85,19052,3.1,194,1.0
+60,USA,Chicago,2024-03-03,Board Game,680.87,2,1361.74,Toys,Sunday,1,Winter,3,2024,1,1836.91,0.95,1037.56,19586,1.2,170,0.6
+61,USA,Chicago,2024-03-04,Puzzle,12.5,4,50.0,Toys,Monday,0,Winter,3,2024,1,1504.99,0.84,949.21,13349,1.9,184,1.2
+62,Brazil,Brasilia,2024-03-05,Board Game,44.62,5,223.1,Toys,Tuesday,1,Winter,3,2024,0,1529.54,1.02,1044.25,10669,4.3,123,0.8
+63,Australia,Melbourne,2024-03-06,Tablet,474.11,1,474.11,Electronics,Wednesday,1,Winter,3,2024,1,1364.44,1.09,923.77,15830,2.2,179,1.5
+64,India,Delhi,2024-03-07,Milk,453.72,7,3176.04,Grocery,Thursday,0,Winter,3,2024,1,1361.82,1.11,1011.94,13812,3.5,73,1.1
+65,Russia,Novosibirsk,2024-03-08,Jacket,991.19,2,1982.38,Clothing,Friday,0,Winter,3,2024,0,1512.74,0.89,936.04,10241,2.1,74,0.8
+66,Canada,Vancouver,2024-03-09,Camera,804.28,6,4825.68,Electronics,Saturday,1,Winter,3,2024,1,1727.58,1.45,963.13,21709,4.9,191,1.3
+67,Australia,Sydney,2024-03-10,Pants,563.03,1,563.03,Clothing,Sunday,1,Winter,3,2024,0,1613.48,1.09,1057.9,20269,1.9,179,0.8
+68,Germany,Frankfurt,2024-03-11,Camera,124.37,10,1243.7,Electronics,Monday,1,Winter,3,2024,1,1784.01,1.19,1067.53,26179,3.2,109,1.2
+69,Brazil,Rio de Janeiro,2024-03-12,Doll,425.88,2,851.76,Toys,Tuesday,1,Winter,3,2024,0,1873.81,1.14,989.71,29495,3.8,157,0.6
+70,Brazil,Sao Paulo,2024-03-13,Laptop,950.91,3,2852.73,Electronics,Wednesday,1,Winter,3,2024,0,2213.62,1.31,997.61,23088,1.5,88,1.4
+71,Brazil,Brasilia,2024-03-14,Doll,798.13,2,1596.26,Toys,Thursday,1,Winter,3,2024,1,1987.93,1.44,984.26,21421,2.8,131,1.0
+72,France,Paris,2024-03-15,Tablet,697.27,7,4880.89,Electronics,Friday,0,Winter,3,2024,0,2402.01,1.3,978.41,29620,3.5,71,0.8
+73,France,Paris,2024-03-16,Doll,232.58,9,2093.22,Toys,Saturday,1,Winter,3,2024,0,2011.66,1.39,1018.24,17693,4.2,136,0.5
+74,Canada,Montreal,2024-03-17,Camera,310.83,4,1243.32,Electronics,Sunday,1,Winter,3,2024,1,2108.84,1.49,1084.02,22802,1.1,151,0.8
+75,France,Marseille,2024-03-18,Camera,801.35,1,801.35,Electronics,Monday,1,Winter,3,2024,1,2045.65,1.47,999.51,10265,2.2,72,0.8
+76,South Africa,Durban,2024-03-19,Pants,819.17,9,7372.53,Clothing,Tuesday,0,Winter,3,2024,1,2977.19,0.87,1064.18,12483,2.6,125,0.7
+77,India,Mumbai,2024-03-20,Action Figure,597.66,8,4781.28,Toys,Wednesday,1,Winter,3,2024,0,3252.69,1.0,918.1,28848,4.0,121,0.5
+78,Brazil,Sao Paulo,2024-03-21,Action Figure,413.31,1,413.31,Toys,Thursday,1,Winter,3,2024,1,3083.7,1.5,1096.88,25184,2.1,176,1.3
+79,Australia,Sydney,2024-03-22,Eggs,221.22,9,1990.98,Grocery,Friday,1,Winter,3,2024,0,2670.86,1.49,1075.15,29132,3.8,136,1.1
+80,India,Delhi,2024-03-23,Tablet,537.88,9,4840.92,Electronics,Saturday,0,Winter,3,2024,0,3063.38,1.16,944.99,10853,3.3,199,0.7
+81,France,Lyon,2024-03-24,Camera,26.98,5,134.9,Electronics,Sunday,0,Winter,3,2024,1,2905.04,1.02,902.3,11362,2.8,72,1.2
+82,USA,New York,2024-03-25,Eggs,112.09,3,336.27,Grocery,Monday,0,Winter,3,2024,1,2838.6,0.81,970.01,26010,2.4,171,1.5
+83,Canada,Toronto,2024-03-26,Laptop,929.09,9,8361.81,Electronics,Tuesday,1,Winter,3,2024,0,2979.92,0.88,914.4,26392,2.7,140,1.0
+84,Brazil,Sao Paulo,2024-03-27,Bread,755.14,1,755.14,Grocery,Wednesday,0,Winter,3,2024,0,2404.76,1.39,934.33,27794,2.4,108,1.3
+85,India,Delhi,2024-03-28,Milk,399.91,1,399.91,Grocery,Thursday,1,Winter,3,2024,1,2402.85,1.09,1095.76,27161,2.4,119,0.7
+86,Russia,Moscow,2024-03-29,Doll,270.67,1,270.67,Toys,Friday,1,Winter,3,2024,1,2157.09,1.19,1014.41,13445,3.9,182,0.9
+87,Germany,Frankfurt,2024-03-30,Doll,815.09,10,8150.9,Toys,Saturday,1,Winter,3,2024,1,2629.94,1.19,1059.85,21011,1.8,196,0.6
+88,Japan,Tokyo,2024-03-31,Smartphone,193.63,4,774.52,Electronics,Sunday,1,Winter,3,2024,0,2721.32,1.42,946.38,13672,3.7,152,0.8
+89,Russia,Novosibirsk,2024-04-01,Laptop,17.62,2,35.24,Electronics,Monday,0,Spring,4,2024,0,2678.31,1.09,1043.16,25001,1.3,172,0.7
+90,Germany,Berlin,2024-04-02,Puzzle,260.63,3,781.89,Toys,Tuesday,1,Spring,4,2024,1,1595.47,1.45,963.45,28091,4.0,86,1.1
+91,South Africa,Johannesburg,2024-04-03,Shoes,235.28,3,705.84,Clothing,Wednesday,0,Spring,4,2024,0,1588.42,0.84,1095.36,20179,4.8,125,1.3
+92,Japan,Kyoto,2024-04-04,Board Game,10.28,8,82.24,Toys,Thursday,0,Spring,4,2024,1,1543.04,1.09,903.52,17518,4.5,88,1.1
+93,Brazil,Rio de Janeiro,2024-04-05,Cheese,177.65,4,710.6,Grocery,Friday,0,Spring,4,2024,0,1605.89,1.14,1021.58,12393,4.7,82,0.8
+94,South Africa,Durban,2024-04-06,Shirt,716.75,6,4300.5,Clothing,Saturday,0,Spring,4,2024,0,1055.83,1.24,1046.77,10028,4.2,198,1.2
+95,Russia,Saint Petersburg,2024-04-07,Eggs,443.6,10,4436.0,Grocery,Sunday,1,Spring,4,2024,0,1578.9,1.15,922.18,29816,1.4,83,0.8
+96,Australia,Brisbane,2024-04-08,Shoes,622.09,5,3110.45,Clothing,Monday,0,Spring,4,2024,0,2018.22,1.21,1036.22,17549,4.2,122,0.8
+97,Germany,Munich,2024-04-09,Shoes,925.48,6,5552.88,Clothing,Tuesday,0,Spring,4,2024,0,2699.79,0.83,949.26,25002,2.7,94,0.8
+98,Australia,Melbourne,2024-04-10,Jacket,369.78,4,1479.12,Clothing,Wednesday,0,Spring,4,2024,1,2810.26,1.2,1071.32,10018,4.6,112,1.2
+99,Germany,Berlin,2024-04-11,Camera,978.71,8,7829.68,Electronics,Thursday,0,Spring,4,2024,1,3917.03,1.18,1084.82,25849,1.8,118,1.1
+100,India,Bangalore,2024-04-12,Camera,109.23,1,109.23,Electronics,Friday,1,Spring,4,2024,0,3831.12,1.38,980.01,19426,4.5,158,1.1

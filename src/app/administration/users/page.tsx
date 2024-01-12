@@ -3,9 +3,9 @@ import AnimatedButton from '@/components/AnimatedButton';
 import NotAuthorized from '@/components/NotAuthorized';
 import { useSession } from 'next-auth/react';
 import React, { useEffect, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSync } from '@fortawesome/free-solid-svg-icons'
 import useTranslation from "@/utils/useTranslation";
+import SearchBar from '@/components/SearchBar';
+import Pagination from '@/components/Pagination';
 
 type User = {
     VartotojoID: number;
@@ -151,22 +151,10 @@ const UsersPage: React.FC = () => {
                     <hr className="mb-8" />
                     <h2 className="text-2xl font-semibold mb-4">{t("userSearch")}</h2>
                     <p className="mb-4">{t("userSearchDescription")}</p>
-                    <div className="flex justify-between items-center mb-2">
-                        <label className="block text-gray-700 font-bold m-2" htmlFor="search">
-                            {t("search")}:
-                        </label>
-                        <input
-                            id="search"
-                            type="text"
-                            value={searchTerm}
-                            onChange={handleSearchChange}
-                            placeholder={t("searchPlaceholder")}
-                            className="shadow appearance-none border rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline flex-grow"
-                        />
-                        <AnimatedButton onClick={handleRefresh} className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded ml-2">
-                            <FontAwesomeIcon icon={faSync} />
-                        </AnimatedButton>
-                    </div>
+                    <SearchBar
+                        searchTerm={searchTerm}
+                        onSearchChange={handleSearchChange}
+                        onRefresh={handleRefresh} />
                     <div className="overflow-x-auto rounded-lg shadow overflow-hidden">
                         <table className="min-w-full leading-normal bg-white">
                             <thead>
@@ -288,21 +276,11 @@ const UsersPage: React.FC = () => {
                             </tbody>
                         </table>
                     </div>
-                    <div className="pagination flex justify-center items-center space-x-2 my-4">
-                        {Array.from({ length: totalPages }, (_, index) => (
-                            <AnimatedButton
-                                key={index}
-                                className={`px-4 py-2 text-sm border rounded-md ${currentPage === index + 1
-                                    ? 'bg-green-500 text-white border-green-500'
-                                    : 'bg-white text-green-500 border-gray-300 hover:bg-blue-100'
-                                    }`}
-                                onClick={() => changePage(index + 1)}
-                                disabled={currentPage === index + 1}
-                            >
-                                {index + 1}
-                            </AnimatedButton>
-                        ))}
-                    </div>
+                    <Pagination
+                        totalPages={totalPages}
+                        currentPage={currentPage}
+                        onPageChange={changePage}
+                    />
                     <hr className="mb-8" />
                     <h2 className="text-2xl font-semibold mb-8">{t("createNewUser")}</h2>
                     <form onSubmit={handleCreate} className="mt-8 space-y-6 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

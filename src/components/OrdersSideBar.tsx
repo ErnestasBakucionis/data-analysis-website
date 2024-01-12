@@ -29,7 +29,7 @@ const Sidebar: React.FC = () => {
                         <div
                             className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-pointer transition duration-200 hover:bg-green-500 ${isActive("/orders/myorders") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
                         >
-                            My Orders
+                            {t('myOrders')}
                         </div>
                     </Link>
                 </li>
@@ -38,7 +38,7 @@ const Sidebar: React.FC = () => {
                         <div
                             className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-pointer transition duration-200 hover:bg-green-500 ${isActive("/orders/automatedAnalysis") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
                         >
-                            About Automated Analysis
+                            {t('aboutAutomatedAnalysis')}
                         </div>
                     </Link>
                 </li>
@@ -47,7 +47,7 @@ const Sidebar: React.FC = () => {
                         <div
                             className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-pointer transition duration-200 hover:bg-green-500 ${isActive("/orders/regression") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
                         >
-                            Regression Analysis
+                            {t('regression')}
                         </div>
                     </Link>
                 </li>
@@ -57,7 +57,7 @@ const Sidebar: React.FC = () => {
                     <div
                         className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-not-allowed transition duration-200 ${isActive("/orders/segmentation") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
                     >
-                        Segmentation Analysis (Under development)
+                        {t('segmentation')} ({t('underDevelopment')})
                     </div>
                     {/* <Link href="/orders/segmentation">
                         <div
@@ -72,7 +72,7 @@ const Sidebar: React.FC = () => {
                     <div
                         className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-not-allowed transition duration-200 ${isActive("/orders/timeseries") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
                     >
-                        Cohort Analysis (Under development)
+                        {t('cohort')} ({t('underDevelopment')})
                     </div>
                     {/* <Link href="/orders/cohort">
                         <div
@@ -86,7 +86,7 @@ const Sidebar: React.FC = () => {
                     <div
                         className={`bg-gray-700 block py-1 px-4 rounded-lg cursor-not-allowed transition duration-200 ${isActive("/orders/timeseries") ? "bg-green-500 text-gray-100" : "text-gray-300"}`}
                     >
-                        Time series Analysis (Under development)
+                        {t('timeSeries')} ({t('underDevelopment')})
                     </div>
                     {/* <Link href="/orders/timeseries">
                         <div

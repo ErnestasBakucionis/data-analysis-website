@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 
 function Regression() {
-    const clientCsvFile = '/csvExamples/client.csv';
+    const clientCsvFile = '/sample_data.csv';
 
     return (
         <div className="container mx-auto p-6">

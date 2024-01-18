@@ -19,7 +19,7 @@ export const saveFileLocally = (
     dataType: string,
     analysisType: string
 ): Promise<string> => {
-    const localUploadsDir = path.join(__dirname, 'uploads');
+    const localUploadsDir = path.join('/tmp', 'uploads');
     if (!fs.existsSync(localUploadsDir)) {
         fs.mkdirSync(localUploadsDir, { recursive: true });
     }

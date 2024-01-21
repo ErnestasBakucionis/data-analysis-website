@@ -5,7 +5,7 @@ function Regression() {
     const clientCsvFile = '/sample_data.csv';
 
     return (
-        <div className="container mx-auto p-6">
+        <div className="container mx-auto p-6 m-4 bg-white rounded-lg shadow-md">
             {/* Information About Regression Analysis */}
             <div>
                 <h1 className="text-3xl font-semibold mb-4">Understanding Regression Analysis</h1>

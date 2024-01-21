@@ -43,7 +43,8 @@ function MyOrders() {
                 setValidationError('');
                 setFile(file);
             } else {
-                setValidationError('The file must be a CSV.');
+                setValidationError(t('fileIsNotCsv'));
+                return false;
             }
         }
     };
@@ -62,11 +63,11 @@ function MyOrders() {
                         if (validateCSVContents(results.data, csvHeaders[selectedDataTemplate])) {
                             resolve(true); // Validation passed
                         } else {
-                            setValidationError('The CSV file does not have the expected headers.');
+                            setValidationError(t('csvFileDontHaveExpectedHeaders'));
                             resolve(false); // Validation failed
                         }
                     } else {
-                        setValidationError('The CSV file is empty or could not be read.');
+                        setValidationError(t('csvFileIsEmptyOrCannotBeRead'));
                         resolve(false); // Validation failed
                     }
                 },
@@ -97,15 +98,15 @@ function MyOrders() {
 
     const validateForm = (): boolean => {
         if (!file) {
-            setValidationError('Please upload a CSV file.');
+            setValidationError(t('pleaseUploadCsvFile'));
             return false;
         }
         if (!selectedAnalysisTool) {
-            setValidationError('Please select an analysis tool.');
+            setValidationError(t('pleaseSelectAnalysisTool'));
             return false;
         }
         if (!selectedDataTemplate) {
-            setValidationError('Please select a data template.');
+            setValidationError(t('pleaseSelectDataTemplate'));
             return false;
         }
         return true;
@@ -117,7 +118,7 @@ function MyOrders() {
         setIsSubmitted(false);
 
         if (!file) {
-            setValidationError('Please upload a CSV file.');
+            setValidationError(t('pleaseUploadCsvFile'));
             return;
         }
 
@@ -152,7 +153,7 @@ function MyOrders() {
     };
 
     return (
-        <div className="container mx-auto p-6">
+        <div className="container mx-auto p-6 m-4 bg-white rounded-lg shadow-md">
             <h1 className="text-3xl font-semibold mb-4">{t('createNewOrder')}</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4">

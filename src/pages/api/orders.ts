@@ -79,7 +79,7 @@ export default async function handle(req: NextApiRequest, res: NextApiResponse) 
             const degree = 10;
             const model = analysisService.createPolynomialRegressionModel(degree);
             await analysisService.trainModel(model, degree, 300);
-            const generateDates = await analysisService.generateFutureDates(5);
+            const generateDates = await analysisService.generateFutureDates(30);
             const analysisResults = await analysisService.forecastSales(model, generateDates, degree);
 
             if (analysisResults) {

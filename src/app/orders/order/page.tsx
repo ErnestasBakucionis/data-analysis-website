@@ -348,7 +348,7 @@ const Order: React.FC<OrderProps> = ({ searchParams }) => {
                     <AnimatedButton
                         className='px-3 mb-3 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500'
                     >
-                        Go back
+                        {t('backToOrders')}
                     </AnimatedButton>
                 </Link>
             </div>
@@ -356,36 +356,36 @@ const Order: React.FC<OrderProps> = ({ searchParams }) => {
             <hr className="mb-8" />
 
             <div className="container p-6">
-                <h1 className="text-3xl font-semibold mb-4">Sales Forecasting</h1>
+                <h1 className="text-3xl font-semibold mb-4">{t('salesForecasting')}</h1>
                 <div className="mx-auto p-6 m-4 bg-white rounded-lg shadow-md">
                     {modelMetrics && (
                         <div className="flex flex-wrap -mx-2">
                             <div className="px-2 w-full lg:w-1/2">
-                                <h2 className="text-xl font-semibold mb-4">Model Metrics</h2>
+                                <h2 className="text-xl font-semibold mb-4">{t('modelMetrics')}</h2>
                                 <p className={`text-lg ${modelMetrics.performanceMSE === 'Good' ? 'text-green-600' : 'text-red-600'}`}>
-                                    <b>MSE:</b> {modelMetrics.mse} <span>({modelMetrics.performanceMSE})</span>
+                                    <b>MSE:</b> {modelMetrics.mse} <span>({t(modelMetrics.performanceRMSE)})</span>
                                 </p>
                                 <p className={`text-lg ${modelMetrics.performanceRMSE === 'Good' ? 'text-green-600' : 'text-red-600'}`}>
-                                    <b>RMSE:</b> {modelMetrics.rmse} <span>({modelMetrics.performanceRMSE})</span>
+                                    <b>RMSE:</b> {modelMetrics.rmse} <span>({t(modelMetrics.performanceRMSE)})</span>
                                 </p>
                                 <p className={`text-lg ${modelMetrics.performanceMAE === 'Good' ? 'text-green-600' : 'text-red-600'}`}>
-                                    <b>MAE:</b> {modelMetrics.mae} <span>({modelMetrics.performanceMAE})</span>
+                                    <b>MAE:</b> {modelMetrics.mae} <span>({t(modelMetrics.performanceMAE)})</span>
                                 </p>
                                 <p className="text-lg">
                                     <b>R-squared:</b> {modelMetrics.rSquared}
                                 </p>
-                                <p className={`text-lg font-bold ${modelMetrics.overallPerformance === 'Good' ? 'text-green-600' : 'text-red-600'}`}>
-                                    <b>Overall Performance:</b> {modelMetrics.overallPerformance}
+                                <p className={`text-lg font-bold ${modelMetrics.overallPerformance === 'Good Overall' ? 'text-green-600' : 'text-red-600'}`}>
+                                    <b>{t('overallPerformance')}:</b> {t(modelMetrics.overallPerformance)}
                                 </p>
                             </div>
                             <div className="px-2 w-full lg:w-1/2">
-                                <h2 className="text-xl font-semibold mb-4">Model Description</h2>
-                                <p className="text-lg mb-2">This section provides a comprehensive overview of the model is performance metrics. Understanding these metrics is crucial for evaluating the model is predictive accuracy and reliability.</p>
+                                <h2 className="text-xl font-semibold mb-4">{t('modelDescriptionTitle')}</h2>
+                                <p className="text-lg mb-2">{t('modelDescriptionParagraph')}</p>
                                 <ul className="list-disc pl-5 mb-4">
-                                    <li><b>MSE (Mean Squared Error):</b> Indicates the average squared difference between the estimated values and the actual value.</li>
-                                    <li><b>RMSE (Root Mean Squared Error):</b> Represents the square root of the second sample moment of the differences between predicted values and observed values.</li>
-                                    <li><b>MAE (Mean Absolute Error):</b> Measures the average magnitude of the errors in a set of predictions, without considering their direction.</li>
-                                    <li><b>R-squared:</b> Provides a measure of how well observed outcomes are replicated by the model, based on the proportion of total variation of outcomes explained by the model.</li>
+                                    <li><b>MSE (Mean Squared Error):</b> {t('MseDescription')} </li>
+                                    <li><b>RMSE (Root Mean Squared Error):</b> {t('RmseDescription')} </li>
+                                    <li><b>MAE (Mean Absolute Error):</b> {t('MaeDescription')} </li>
+                                    <li><b>R-squared:</b> {t('R2Description')} </li>
                                 </ul>
                             </div>
                         </div>
@@ -393,9 +393,9 @@ const Order: React.FC<OrderProps> = ({ searchParams }) => {
                 </div>
                 {/* Center a div */}
                 <div className='flex justify-center'>
-                    <AnimatedButton className="px-3 m-2 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500" onClick={() => setTimeUnit('day')}>Show in Days</AnimatedButton>
-                    <AnimatedButton className="px-3 m-2 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500" onClick={() => setTimeUnit('month')}>Show in Months</AnimatedButton>
-                    <AnimatedButton className="px-3 m-2 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500" onClick={() => setTimeUnit('year')}>Show in Years</AnimatedButton>
+                    <AnimatedButton className="px-3 m-2 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500" onClick={() => setTimeUnit('day')}>{t('showInDays')}</AnimatedButton>
+                    <AnimatedButton className="px-3 m-2 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500" onClick={() => setTimeUnit('month')}>{t('showInMonths')}</AnimatedButton>
+                    <AnimatedButton className="px-3 m-2 py-2 rounded-md text-sm font-medium text-gray-100 hover:bg-green-600 bg-green-500" onClick={() => setTimeUnit('year')}>{t('showInYears')}</AnimatedButton>
                 </div>
                 <Line key={chartKey} ref={chartRef} data={chartData} options={options} />
             </div>
@@ -403,13 +403,13 @@ const Order: React.FC<OrderProps> = ({ searchParams }) => {
 
             <hr className="mb-8" />
             <div className="bar-chart-container container p-6" style={{ minHeight: '400px' }}>
-                <h1 className="text-3xl font-semibold mb-4">Total Sales per Product</h1>
+                <h1 className="text-3xl font-semibold mb-4">{t('totalSalesPerProduct')}</h1>
                 <Bar data={barChartData} options={barChartOptions} />
             </div>
 
             <hr className="mb-8" />
             <div className="pie-chart-container container mx-auto p-6" style={{ width: '50%', height: 'auto' }}>
-                <h1 className="text-3xl font-semibold mb-4">Sales Distribution</h1>
+                <h1 className="text-3xl font-semibold mb-4">{t('salesDistribution')}</h1>
                 <div style={{ position: 'relative', height: '40vh', width: '40vw' }}> {/* Adjust the height and width as needed */}
                     <Pie data={pieChartData} options={pieChartOptions} />
                 </div>

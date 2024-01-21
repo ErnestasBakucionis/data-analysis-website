@@ -402,14 +402,16 @@ const Order: React.FC<OrderProps> = ({ searchParams }) => {
 
 
             <hr className="mb-8" />
+            <h1 className="text-3xl font-semibold mb-4">{t('totalSalesPerProduct')}</h1>
             <div className="bar-chart-container container p-6" style={{ minHeight: '400px' }}>
-                <h1 className="text-3xl font-semibold mb-4">{t('totalSalesPerProduct')}</h1>
+
                 <Bar data={barChartData} options={barChartOptions} />
             </div>
 
             <hr className="mb-8" />
+            <h1 className="text-3xl font-semibold mb-4">{t('salesDistribution')}</h1>
             <div className="pie-chart-container container mx-auto p-6" style={{ width: '50%', height: 'auto' }}>
-                <h1 className="text-3xl font-semibold mb-4">{t('salesDistribution')}</h1>
+
                 <div style={{ position: 'relative', height: '40vh', width: '40vw' }}> {/* Adjust the height and width as needed */}
                     <Pie data={pieChartData} options={pieChartOptions} />
                 </div>

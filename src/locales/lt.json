@@ -185,5 +185,11 @@
   "examplesOfSimspleDataTemplateExplainingText": "Štai nuotraukoje galima matyti paprasto duomenų šablono pavyzdį programoje ",
   "examplesOfSimpleDataTemplateExplainingText-2": "Taip pat jūs galite parsisiųsti paprasto duomenų šablono pavyzdį ",
   "examplesOfSimpleDataTemplateExplainingText-3": " formatu.",
-  "downloadSimpleDataTemplateExample": "Parsisiųsti paprasto duomenų šablono pavyzdį"
+  "downloadSimpleDataTemplateExample": "Parsisiųsti paprasto duomenų šablono pavyzdį",
+  "understandingRegressionAnalysis": "Regresinės analizės supratimas",
+  "understandingRegressionAnalysisExplainingText": "Regresinė analizė yra galingas statistinis metodas, naudojamas duomenų prognozavimui ir prognozei. Ji padeda suprasti priklausomojo kintamojo ir vieno ar daugiau nepriklausomųjų kintamųjų santykį. Plačiai naudojama įvairiose srityse informuotoms prognozėms atlikti, regresinė analizė analizuoja istorinius duomenis, siekiant prognozuoti ateities tendencijas ir rezultatus. Šiame skyriuje nagrinėjami regresijos pagrindai, jos svarba ir taikymas tiksliai duomenų prognozei.",
+  "simplifyingRegressionAnalysis": "Regresinės analizės supaprastinimas pritaikant mūsų šabloną",
+  "simplifyingRegressionAnalysisExplainingText": "Mūsų naudotojui draugiškas CSV šablonas yra sukurtas taip, kad regresinė analizė būtų paprasta. Jame yra specifinės eilutės skirtingiems duomenų tipams, užtikrinančios nesudėtingą duomenų integraciją. Užpildykite savo duomenis numatytose eilutėse, ir mūsų sistema automatiškai atliks regresinę analizę, suteikdama patikimą prognozavimą, lengvai ir tiksliai.",
+  "tailoredDataAnalysis": "Pritaikytosios duomenų analizės paslaugos",
+  "tailoredDataAnalysisExplainingText": "Jei Jūsų duomenų rinkinys neatitinka mūsų standartinio CSV šablono, mūsų pritaikytos duomenų analizės paslaugos yra čia, kad padėtų. Pateikite savo unikalų duomenų rinkinį, ir mūsų ekspertai atliks regresinę analizę, pateikdami asmenines įžvalgas ir prognozes. Ši paslauga užtikrina tikslią ir aktualią analizę bet kokios duomenų struktūros atveju."
 }
